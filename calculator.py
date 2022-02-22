@@ -2,9 +2,27 @@ from distutils import command
 import math
 from sqlite3 import Row
 from tkinter import *
+from turtle import window_height
 
 root = Tk()
 root.title("Calculator")
+
+#Config our Column rows and columns
+
+#Config Rows
+Grid.rowconfigure(root, 0, weight=1)
+Grid.rowconfigure(root, 1, weight=1)
+Grid.rowconfigure(root, 2, weight=1)
+Grid.rowconfigure(root, 3, weight=1)
+Grid.rowconfigure(root, 4, weight=1)
+Grid.rowconfigure(root, 5, weight=1)
+Grid.rowconfigure(root, 6, weight=1)
+
+
+#Config Columns
+Grid.columnconfigure(root, 0, weight=1 )
+Grid.columnconfigure(root, 1, weight=1 )
+Grid.columnconfigure(root, 2, weight=1 )
 
 #Define Text Field
 field = Entry(root, width=35, borderwidth=5)
@@ -88,26 +106,26 @@ button_clear = Button(root, text="Clear", padx=79, pady=20, command=button_clear
 
 
 #Place buttons on to the window
-button_1.grid(row=3, column=0)
-button_2.grid(row=3, column=1)
-button_3.grid(row=3, column=2)
+button_1.grid(row=3, column=0, sticky="nsew")
+button_2.grid(row=3, column=1, sticky="nsew")
+button_3.grid(row=3, column=2, sticky="nsew")
 
-button_4.grid(row=2, column=0)
-button_5.grid(row=2, column=1)
-button_6.grid(row=2, column=2)
+button_4.grid(row=2, column=0, sticky="nsew")
+button_5.grid(row=2, column=1, sticky="nsew")
+button_6.grid(row=2, column=2, sticky="nsew")
 
-button_7.grid(row=1, column=0)
-button_8.grid(row=1, column=1)
-button_9.grid(row=1, column=2)
+button_7.grid(row=1, column=0, sticky="nsew")
+button_8.grid(row=1, column=1, sticky="nsew")
+button_9.grid(row=1, column=2, sticky="nsew")
 
-button_0.grid(row=4, column=0)
+button_0.grid(row=4, column=0, sticky="nsew")
 
-button_clear.grid(row=4, column=1, columnspan=2)
-button_add.grid(row=5, column=0)
-button_equal.grid(row=5, column=1, columnspan=2)
+button_clear.grid(row=4, column=1, columnspan=2, sticky="nsew")
+button_add.grid(row=5, column=0, sticky="nsew")
+button_equal.grid(row=5, column=1, columnspan=2, sticky="nsew")
 
-button_subtract.grid(row=6, column=0)
-button_multiply.grid(row=6, column=1)
-button_divide.grid(row=6, column=2)
+button_subtract.grid(row=6, column=0, sticky="nsew")
+button_multiply.grid(row=6, column=1, sticky="nsew")
+button_divide.grid(row=6, column=2, sticky="nsew")
 
 root.mainloop()
