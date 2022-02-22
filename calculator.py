@@ -18,6 +18,17 @@ def button_click(number):
 def button_clear():
     field.delete(0, END)
 
+def button_add():
+    first_number = field.get()
+    global f_num
+    f_num = int(first_number)
+    field.delete(0, END)
+
+def button_equal():
+    second_number = field.get()
+    field.delete(0, END)
+    field.insert(0, f_num + int(second_number))
+
 #Define buttons
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
 button_2 = Button(root, text="2", padx=40, pady=20, command=lambda: button_click(2))
@@ -30,8 +41,8 @@ button_8 = Button(root, text="8", padx=40, pady=20, command=lambda: button_click
 button_9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
 button_0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 
-button_add = Button(root, text="+", padx=39, pady=20, command=button_click)
-button_equal = Button(root, text="=", padx=91, pady=20, command=button_click)
+button_add = Button(root, text="+", padx=39, pady=20, command=button_add)
+button_equal = Button(root, text="=", padx=91, pady=20, command=button_equal)
 button_clear = Button(root, text="Clear", padx=79, pady=20, command=button_clear)
 
 #Place buttons on to the window
